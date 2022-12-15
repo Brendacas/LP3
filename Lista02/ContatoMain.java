@@ -1,4 +1,4 @@
-package Lista2;
+package Lista02;
 
 public class ContatoMain {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package Lista2;
+package Lista02;
 
 public class DataMain {
 	public static void main(String[] args) {

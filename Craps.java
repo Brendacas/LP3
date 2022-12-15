@@ -1,5 +1,4 @@
 
-package Exercicios;
 import java.util.Random;
 public class Craps {
 	public static void main(String[] args) {

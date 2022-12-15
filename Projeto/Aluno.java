@@ -1,10 +1,10 @@
-
 import java.lang.String;
+import java.util.Scanner;
 //Class Aluno herda da class Usuario
 public class Aluno extends Usuario{
-    private int matricula;
-    private String turma;
-    private int codigo;
+   protected int matricula;
+
+   Scanner scan = new Aluno();
 
     //Construtor
     public Aluno(String nome, String usuario, int id, String senha, String Turma, int cd, int mat) {
@@ -22,10 +22,6 @@ public class Aluno extends Usuario{
         this("Brenda","brendac",1024568745,"teste123","A",123,102541205);
     }
 
-    //retorna Numero de matricula
-    private int getMatricula(){
-        return this.matricula;
-    }
     //retorna turma
     private String getTurma(){
         return this.turma;
@@ -38,19 +34,32 @@ public class Aluno extends Usuario{
             return false;
         }
     }
-    public void matricularTurma(int codigo, Turma disciplina, Professor professor){
-
+    public void matricularTurma(int codigo, Turma disciplina, Turma turma, Professor professor){
+      
     }
     public void verTarefas(Turma disciplina, Turma avaliacoes){
+
 
     }
     public void verNotas(Turma disciplina, Professor notas){
 
+    }
+    public int getMatricula(int matricula){
+        return this.matricula;
+    }
+
+    @Override
+    public int compareTo(Aluno a){
+      if((super.compare(a)==0) && ((a.getMatricula() == this.matricula) && (a.getNome().equals(this.nome)))){
+        return 1;
+      }else{
+        return 0;
+      }
     }
 
     @Override
     public String toString(){
         return "Dados do aluno\n\n" + super.toString() + "Numero de matricula: " + this.matricula + "\nTurma do aluno: " + this.turma + "\n";
     }
-   
 }
+

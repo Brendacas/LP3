@@ -1,4 +1,4 @@
-package Lista2;
+package Lista02;
 
 public class Data {
 	int dia;
