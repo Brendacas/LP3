@@ -35,7 +35,7 @@ public class Turma {
     }
 
     //Remove um estudante e usa uma fila para organizar o vetor
-    public int removeStudent(Aluno al, int ultimo){
+    public int removeEstudante(Aluno al, int ultimo){
         for(int i = 0; alunos[i] != null; i++){
             if(alunos[i].compareTo(al) == 0){
                 alunos[i] = null;
