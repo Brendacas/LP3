@@ -1,8 +1,8 @@
 package Estruturas;
 //Classe Queue genérica que herda list generica
-public class Queue<T extends Comparable<T>> extends List<T>{
+public class Queue<Professor extends Comparable<Professor>> extends List<Professor>{
     //Construtor
-    public Queue(T dados){
+    public Queue(Professor dados){
         setRear(dados);
     }
 
@@ -12,12 +12,12 @@ public class Queue<T extends Comparable<T>> extends List<T>{
     }
 
     //Metodo enqueue que coloca um objeto no final da fila
-    public void enqueue(T dados){
+    public void enqueue(Professor dados){
         setRear(dados);
     }
 
     //Metodo dequeue que remove um objeto do começo da fila
-    public T dequeue(){
+    public Professor dequeue(){
         if(getTam() == 0){
             System.out.println("Erro!\n\n");
             System.exit(-1);

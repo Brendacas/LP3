@@ -1,4 +1,4 @@
-public class Professor extends Usuario{
+public class Professor extends Usuario {
     protected String disciplina;
     protected long codigo;
     //Construtor
@@ -19,7 +19,7 @@ public class Professor extends Usuario{
     public String getDisciplina(){
         return this.disciplina;
     }
-    public long getCodigo(){
+    public Object getCodigo(){
         return this.codigo;
     }
     //Define as informações do professor
@@ -42,17 +42,19 @@ public class Professor extends Usuario{
             return true;
         }
     }
+    
+
     @Override
-    public int compareTo(Professor p){
-        if((super.compare(p) == 0) && (p.getDisciplina().equals(disciplina) && p.getCodigo().equals(codigo))){
+    public String toString(){
+        return "Dados do(a) professor(a)\n" + super.toString() + "Codigo: " + codigo + "\nMateria que o(a) professor(a) leciona: " + disciplina + "\n";
+    }
+    @Override
+    public int compareTo(Usuario o) {
+        if((super.compare(o) == 0) && (((Professor) o).getDisciplina().equals(disciplina) && o.getCodigo().equals(codigo))){
             return 0;
         }else{
             return 1;
         }
     }
-    @Override
-    public String toString(){
-        return "Dados do(a) professor(a)\n" + super.toString() + "Codigo: " + codigo + "\nMateria que o(a) professor(a) leciona: " + disciplina + "\n";
-    }
-
+   
 }

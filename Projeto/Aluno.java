@@ -1,10 +1,9 @@
 import java.lang.String;
-import java.util.Scanner;
 //Class Aluno herda da class Usuario
 public class Aluno extends Usuario{
    protected int matricula;
 
-   Scanner scan = new Aluno();
+   Aluno scan = new Aluno();
 
     //Construtor
     public Aluno(String nome, String usuario, int id, String senha, String Turma, int cd, int mat) {
@@ -24,7 +23,7 @@ public class Aluno extends Usuario{
 
     //retorna turma
     private String getTurma(){
-        return this.turma;
+        return this.getTurma();
     }
 
     public boolean validaInfo(int matricula){
@@ -44,22 +43,24 @@ public class Aluno extends Usuario{
     public void verNotas(Turma disciplina, Professor notas){
 
     }
-    public int getMatricula(int matricula){
+    public int getMatricula(){
         return this.matricula;
     }
 
-    @Override
-    public int compareTo(Aluno a){
-      if((super.compare(a)==0) && ((a.getMatricula() == this.matricula) && (a.getNome().equals(this.nome)))){
-        return 1;
-      }else{
-        return 0;
-      }
-    }
 
     @Override
     public String toString(){
-        return "Dados do aluno\n\n" + super.toString() + "Numero de matricula: " + this.matricula + "\nTurma do aluno: " + this.turma + "\n";
+        return "Dados do aluno\n\n" + super.toString() + "Numero de matricula: " + this.matricula + "\nTurma do aluno: " + this.getTurma() + "\n";
+    }
+
+    @Override
+    public int compareTo(Usuario o) {
+        if((super.compare(o)==0) && ((((Aluno) o).getMatricula() == this.matricula) && (o.getNome().equals(this.nome)))){
+            return 1;
+          }else{
+            return 0;
+          }
     }
 }
+
 

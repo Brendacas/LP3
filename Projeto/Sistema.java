@@ -1,4 +1,8 @@
-import java.util.*;
+import java.util.Scanner;
+
+import Estruturas.Queue;
+
+//import java.util.*;
 public class Sistema {
     private static final int vagas=30; //vagas aluno
     private static final int quantVagasP = 50; // vagas prof
@@ -16,7 +20,10 @@ public class Sistema {
 
 
     //Fila para os professores
-    private Queue<Professor> queueProfessor = new Queue<Professor>();
+    /**
+     *
+     */
+    private final Queue<Professor> queueProfessor = new Queue<Professor>();
 
     //Objetos para as turmas
     private Turma calculo = new Turma("Calculo");
@@ -87,7 +94,7 @@ public class Sistema {
         int matricula = a.nextInt();
         
 
-        Aluno al = new Aluno(nome, id, matricula);
+        Aluno al = new Aluno(nome, id, matricula, id, id, matricula, matricula);
         String[] turma = {"Calculo", "Linguagem de Programacao III", "Estrutura de Dados","Algebra Abstrata", "Fundamentos de Economia", "Logica Digital II"};
 
         if(turma[0].equals(turma)){
@@ -106,12 +113,12 @@ public class Sistema {
             economia.setAluno(al, cont5);
             ++cont5;
         }else if(turma[5].equals(turma)){
-           ld2.setAluno(al, ld2);
+           ld2.setAluno(al, cont6);
             ++cont6;
         }else{
             System.out.printf("Não encontramos a turma!!\n\n");
         }
-        setAluno(al);
+        
     }
 
     //Cadastra um professor na universidade
@@ -124,7 +131,7 @@ public class Sistema {
         System.out.printf("Digite o nome do(a) professor(a): ");
         String name = prof.nextLine();
         System.out.printf("Digite o CPF do(a) professor(a): ");
-        String id = prof.nextLine();
+        int id = prof.nextInt();
         System.out.printf("Digite o codigo do(a) professor(a): ");
         long codigo = prof.nextLong();
         System.out.printf("Digite a disciplina que o(a) professor(a) leciona: ");
@@ -145,6 +152,15 @@ public class Sistema {
         professor[contP] = p;
         ++contP;
     }
+
+    public void imprimeProfessores(){
+        tree<Professor> prf = new tree<Professor>(); //Árvore para os professores
+
+        System.out.printf("\n\nINFORMAÇÕES DOS PROFESSORES\n");
+
+        for(int i = 0; i < contP; i++){
+            prf.insere(professor[i]);
+        }
   
 
 }

@@ -5,11 +5,9 @@ public abstract class Usuario implements Comparable<Usuario>{
     private String senha;
     private int id;
     
-    public Usuario(String nome, String usuario, int id, String senha) {
+    public Usuario(String nome, String usuario2, int id, String senha2) {
         this.nome = nome;
         this.id = id;
-        this.usuario = usuario;
-        this.senha = senha;
         }
     protected String getUsuario() {
         return this.usuario;
@@ -56,4 +54,7 @@ public abstract class Usuario implements Comparable<Usuario>{
     public String toString(){
         return "\nName: " + nome + "\nId: " + id + "\nUsuario: " + this.usuario.toString();
     }//Fim compareTo
+    public Object getCodigo() {
+        return null;
+    }
 }
